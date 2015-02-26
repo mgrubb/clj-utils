@@ -24,7 +24,7 @@ A Clojure library that contains various utility functions that I use.
 
 ## Usage
 
-### co.grubb.clj-utils.seq
+### clj-utils.seq
 
 __seq*__
 Return a sequence of the given argument, even if it is a scalar value.
@@ -35,7 +35,7 @@ Return a sequence of the given argument, even if it is a scalar value.
 (seq* [1 2 3])
 ; => (1 2 3)
 ```
-### co.grubb.clj-utils.string
+### clj-utils.string
 
 __to-str__
 Convert an arugment to its name or string reprensentation.
