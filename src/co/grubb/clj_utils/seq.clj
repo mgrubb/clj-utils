@@ -1,4 +1,5 @@
-(ns co.grubb.clj-utils.seq)
+(ns co.grubb.clj-utils.seq
+  "Collection utility functions")
 
 (defn seq*
   "If x is a coll return a sequence of it, otherwise return [x]"
