@@ -1,4 +1,4 @@
-(defproject co.grubb/clj-utils "0.1.0"
+(defproject co.grubb/clj-utils "0.1.1-SNAPSHOT"
   :description "Clojure utility functions"
   :url "http://github.com/mgrubb/clj-utils"
   :license {:name "Eclipse Public License"
