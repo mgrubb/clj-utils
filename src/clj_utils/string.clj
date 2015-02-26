@@ -1,4 +1,4 @@
-(ns co.grubb.clj-utils.string
+(ns clj-utils.string
   "String utility functions"
   (:require [clojure.string :as str]))
 

@@ -1,4 +1,4 @@
-(ns co.grubb.clj-utils.seq
+(ns clj-utils.seq
   "Collection utility functions")
 
 (defn seq*

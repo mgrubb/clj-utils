@@ -4,12 +4,12 @@ A Clojure library that contains various utility functions that I use.
 
 ## Releases and Dependency Information
 
-* Latest stable release is 0.1.0
+* Latest stable release is 0.2.0
 
 [Leiningen](http://leiningen.org/) dependency information:
 
 ```clojure
-[co.grubb/clj-utils "0.1.0"]
+[co.grubb/clj-utils "0.2.0"]
 ```
 
 [Maven](http://maven.apache.org/) dependency information:
@@ -18,13 +18,13 @@ A Clojure library that contains various utility functions that I use.
 <dependency>
   <groupId>co.grubb</groupId>
   <artifactId>clj-utils</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 
 ## Usage
 
-### co.grubb.clj-utils.seq
+### clj-utils.seq
 
 __seq*__
 Return a sequence of the given argument, even if it is a scalar value.
@@ -35,7 +35,7 @@ Return a sequence of the given argument, even if it is a scalar value.
 (seq* [1 2 3])
 ; => (1 2 3)
 ```
-### co.grubb.clj-utils.string
+### clj-utils.string
 
 __to-str__
 Convert an arugment to its name or string reprensentation.
