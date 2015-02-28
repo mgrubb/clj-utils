@@ -20,10 +20,10 @@
               %)
            m))
 
-(defn apply-to-vals
-  "Applies a function to all values in a nested map"
+(defn apply-to-leaves
+  "Applies a function to all leaf values in a nested map"
   [f m]
-  (prewalk #(if (map-entry? %)
+  (prewalk #(if (and (map-entry? %) (not (map? (val %))))
               (map-entry (key %) (f (val %)))
               %)
            m))
