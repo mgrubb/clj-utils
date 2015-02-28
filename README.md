@@ -4,12 +4,12 @@ A Clojure library that contains various utility functions that I use.
 
 ## Releases and Dependency Information
 
-* Latest stable release is 0.2.0
+* Latest stable release is 0.3.0
 
 [Leiningen](http://leiningen.org/) dependency information:
 
 ```clojure
-[co.grubb/clj-utils "0.2.0"]
+[co.grubb/clj-utils "0.3.0"]
 ```
 
 [Maven](http://maven.apache.org/) dependency information:
@@ -18,7 +18,7 @@ A Clojure library that contains various utility functions that I use.
 <dependency>
   <groupId>co.grubb</groupId>
   <artifactId>clj-utils</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0</version>
 </dependency>
 ```
 
@@ -76,6 +76,44 @@ Transform the argument into a keyword by lower-casing and munging it.
 
 (keywordize "Abc Def")
 ; => :abc-def
+```
+
+### clj-utils.map
+
+__map-entry?__ Returns true if argument is a IMapEntry
+```clojure
+(map-entry? (first {:a 1}))
+; => true
+```
+
+__map-entry__ Create a MapEntry object
+```clojure
+(map-entry :k "value")
+; => [:k "value"]
+```
+
+__apply-to-keys__ Apply a function to all the keys in a nested map
+```clojure
+(apply-to-keys #(-> % name (str "-x") keyword) {:a {:b 2}})
+; => {:a-x {:b-x 2}}
+```
+
+__apply-to-leaves__ Apply a function to all the leaves in a nested map
+```clojure
+(apply-to-leaves (partial * 2) {:a {:b 2, :c 3}, :d 4})
+; => {:a {:b 4, :c 6}, :d 8}
+```
+
+__stringify-keys__ Just like `clojure.walk/stringify-keys` except it will stringify any key type
+```clojure
+(stringify-keys {:a {'b {[1 2] :c}}})
+; => {"a" {"b" {"[1 2]" :c}}}
+```
+
+__keywordize-keys__ Just like `clojure.walk/keywordize-keys` except it uses `clj-utils.string/keywordize` instead of `keyword`.
+```clojure
+(keywordize-keys {"a_x" {"b x" :c}, "d _x" :e})
+; => {:a-x {:b-x :c}, :d-x :e}
 ```
 
 ## License
