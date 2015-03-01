@@ -116,6 +116,17 @@ __keywordize-keys__ Just like `clojure.walk/keywordize-keys` except it uses `clj
 ; => {:a-x {:b-x :c}, :d-x :e}
 ```
 
+__keys-in__ Return a vector of vectors containing the key paths in a map
+```clojure
+(def m {:a {:b {:c 1, :d 2}, :e 3}, :f 4, :g {:h 5, :i {:j 6}}})
+
+(keys-in m)
+; => [[:g :h] [:g :i :j] [:f] [:a :e] [:a :b :c] [:a :b :d]]
+
+(map (partial get-in m) (keys-in m))
+; => (5 6 4 3 1 2)
+```
+
 ## License
 
 Copyright © 2015 Michael Grubb. All Rights Reserved.
