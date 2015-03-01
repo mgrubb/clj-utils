@@ -4,12 +4,12 @@ A Clojure library that contains various utility functions that I use.
 
 ## Releases and Dependency Information
 
-* Latest stable release is 0.3.0
+* Latest stable release is 0.3.1
 
 [Leiningen](http://leiningen.org/) dependency information:
 
 ```clojure
-[co.grubb/clj-utils "0.3.0"]
+[co.grubb/clj-utils "0.3.1"]
 ```
 
 [Maven](http://maven.apache.org/) dependency information:
@@ -18,7 +18,7 @@ A Clojure library that contains various utility functions that I use.
 <dependency>
   <groupId>co.grubb</groupId>
   <artifactId>clj-utils</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.1</version>
 </dependency>
 ```
 
@@ -114,6 +114,17 @@ __keywordize-keys__ Just like `clojure.walk/keywordize-keys` except it uses `clj
 ```clojure
 (keywordize-keys {"a_x" {"b x" :c}, "d _x" :e})
 ; => {:a-x {:b-x :c}, :d-x :e}
+```
+
+__keys-in__ Return a vector of vectors containing the key paths in a map
+```clojure
+(def m {:a {:b {:c 1, :d 2}, :e 3}, :f 4, :g {:h 5, :i {:j 6}}})
+
+(keys-in m)
+; => [[:g :h] [:g :i :j] [:f] [:a :e] [:a :b :c] [:a :b :d]]
+
+(map (partial get-in m) (keys-in m))
+; => (5 6 4 3 1 2)
 ```
 
 ## License
