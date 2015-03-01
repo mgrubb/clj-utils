@@ -4,12 +4,12 @@ A Clojure library that contains various utility functions that I use.
 
 ## Releases and Dependency Information
 
-* Latest stable release is 0.3.0
+* Latest stable release is 0.3.1
 
 [Leiningen](http://leiningen.org/) dependency information:
 
 ```clojure
-[co.grubb/clj-utils "0.3.0"]
+[co.grubb/clj-utils "0.3.1"]
 ```
 
 [Maven](http://maven.apache.org/) dependency information:
@@ -18,7 +18,7 @@ A Clojure library that contains various utility functions that I use.
 <dependency>
   <groupId>co.grubb</groupId>
   <artifactId>clj-utils</artifactId>
-  <version>0.3.0</version>
+  <version>0.3.1</version>
 </dependency>
 ```
 
