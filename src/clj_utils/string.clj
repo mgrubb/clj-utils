@@ -19,6 +19,8 @@
   [s]
   (str/replace s #"[\s_]+" "-"))
 
+(def munge-str #'munge-string)
+
 (defn keywordize
   "Translate string s to a keyword.
   This does more processing of s than simply keyword.
