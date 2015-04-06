@@ -4,12 +4,12 @@ A Clojure library that contains various utility functions that I use.
 
 ## Releases and Dependency Information
 
-* Latest stable release is 0.4.0
+* Latest stable release is 0.4.1
 
 [Leiningen](http://leiningen.org/) dependency information:
 
 ```clojure
-[co.grubb/clj-utils "0.4.0"]
+[co.grubb/clj-utils "0.4.1"]
 ```
 
 [Maven](http://maven.apache.org/) dependency information:
@@ -18,7 +18,7 @@ A Clojure library that contains various utility functions that I use.
 <dependency>
   <groupId>co.grubb</groupId>
   <artifactId>clj-utils</artifactId>
-  <version>0.4.0</version>
+  <version>0.4.1</version>
 </dependency>
 ```
 
@@ -125,6 +125,16 @@ __keys-in__ Return a vector of vectors containing the key paths in a map
 
 (map (partial get-in m) (keys-in m))
 ; => (5 6 4 3 1 2)
+```
+
+### clj-utils.java
+
+__apply-java-new__ Calls the contstructor for class `c` with arguments `args`.
+```clojure
+(def m {:scheme "http" :host "example.com" :port -1 :path "/index.html"})
+(apply-java-new java.net.URI
+                ((juxt :scheme :user-info :host :port :path :query :fragment} m)))
+;=> #<URI http://example.com/index.html>
 ```
 
 ## License

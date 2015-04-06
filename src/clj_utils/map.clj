@@ -1,5 +1,5 @@
 (ns clj-utils.map
-  (:require [clj-utils.string :refer (to-str keywordize)]
+  "Map utility functions" (:require [clj-utils.string :refer (to-str keywordize)]
             [clojure.zip :as z]
             [clojure.walk :refer (prewalk)]))
 
