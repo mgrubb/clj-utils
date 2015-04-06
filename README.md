@@ -127,6 +127,16 @@ __keys-in__ Return a vector of vectors containing the key paths in a map
 ; => (5 6 4 3 1 2)
 ```
 
+### clj-utils.java
+
+__apply-java-new__ Calls the contstructor for class `c` with arguments `args`.
+```clojure
+(def m {:scheme "http" :host "example.com" :port -1 :path "/index.html"})
+(apply-java-new java.net.URI
+                ((juxt :scheme :user-info :host :port :path :query :fragment} m)))
+;=> #<URI http://example.com/index.html>
+```
+
 ## License
 
 Copyright © 2015 Michael Grubb. All Rights Reserved.
